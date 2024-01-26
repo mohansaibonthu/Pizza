@@ -1,0 +1,199 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Pizza Web Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Pizza Web Site</h1>
+    <nav>
+      <ul>
+        <li><a class="nav-link" href="#home">Home</a></li>
+        <li><a class="nav-link" href="#products">Products</a></li>
+        <li><a class="nav-link" href="#reviews">Reviews</a></li>
+        <li><a href="cart.html">View Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <div class="hero">
+        <img src="https://th.bing.com/th/id/OIP.0wWiXNxqNPJ4hk4TlXR-pwHaKh?w=2272&h=3230&rs=1&pid=ImgDetMain" alt="Delicious Pizza Banner">
+        <h2>Welcome to Pizza Web Site</h2>
+        <p>Discover the taste of our mouth-watering pizzas!</p>
+        <a href="#products">Explore Our Menu</a>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="product">
+        <img src="https://www.cardamomo.news/__export/1614104578402/sites/debate/img/2021/02/23/whatsapp_image_2021-02-23_at_10_27_48_crop1614104531443.jpeg_242310155.jpeg" alt="Chicken Pizza">
+        <h3>Chicken Pizza</h3>
+        <p>A classic pizza topped with delicious chicken slices.</p>
+        <button onclick="addToCart('Chicken Pizza', 10.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://th.bing.com/th/id/OIP.CviB4U0z6vNB5dtVNyGO6QHaLH?pid=ImgDet&w=474&h=711&rs=1" alt="Vegetarian Pizza">
+        <h3>Vegetarian Pizza</h3>
+        <p>Fresh and colorful veggies on a thin crust. A perfect choice for vegetarians.</p>
+        <button onclick="addToCart('Vegetarian Pizza', 9.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://assets.afcdn.com/recipe/20160519/15342_w3072h2304c1cx3504cy2338.jpg" alt="Pepperoni Pizza">
+        <h3>Pepperoni Pizza</h3>
+        <p>Classic pepperoni slices on a cheesy pizza base.</p>
+        <button onclick="addToCart('Pepperoni Pizza', 12.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://www.lulus.com/blog/wp-content/uploads/2021/02/margherita-pizza-for-two-3789.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://therecipecritic.com/wp-content/uploads/2019/05/besthomemadepizzahero.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://th.bing.com/th/id/OIP.CviB4U0z6vNB5dtVNyGO6QHaLH?pid=ImgDet&w=474&h=711&rs=1" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://peasandcrayons.com/wp-content/uploads/2018/08/Easy-Margherita-Flatbread-Pizza-recipe-4.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://th.bing.com/th/id/OIP.xtjtaj84Foxnkl-fiq-J1QAAAA?rs=1&pid=ImgDetMain" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="https://bakerbynature.com/wp-content/uploads/2016/06/untitled-121-of-140.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+      
+      <div class="product">
+        <img src="https://www.ambslovesfood.com/wp-content/uploads/2015/09/margherita-pizza-10.jpg" alt="Margherita Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Simple and delicious, with fresh tomatoes, mozzarella, and basil.</p>
+        <button onclick="addToCart('Margherita Pizza', 11.99)">Add to Cart</button>
+      </div>
+
+      <!-- Add more products as needed -->
+    </section>
+
+    <section id="reviews">
+      <h2>Customer Reviews</h2>
+      <div class="review">
+        <img src="p2.jpg" alt="Customer 1">
+        <h3>John Doe</h3>
+        <p>"Delicious pizzas! I love the variety and the quality of ingredients used."</p>
+      </div>
+
+      <div class="review">
+        <img src="p3.jpg" alt="Customer 2">
+        <h3>Jane Smith</h3>
+        <p>"The crust is perfect, and the toppings are always fresh. Great service too!"</p>
+      </div>
+
+      <div class="review">
+        <img src="p51.jpg" alt="Customer 3">
+        <h3>Sam Johnson</h3>
+        <p>"I've tried many pizza places, and this one stands out. Highly recommended!"</p>
+      </div>
+      <!-- Reviews section content -->
+    </section>
+
+    <section id="contact">
+
+      
+      <!-- Contact section content -->
+    </section>
+    
+  </main>
+
+  <section id="cart">
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: $<span id="cart-total">0.00</span></p>
+    <!-- You can still keep the checkout button here if needed -->
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Pizza Web Site. All rights reserved.</p>
+  </footer>
+
+ <!-- index.html -->
+
+<!-- ... (head and body tags) ... -->
+
+<script>
+  function addToCart(pizzaType, price) {
+    // Assuming you have a cart object to store order details
+    let cart = JSON.parse(localStorage.getItem('cart')) || { items: [], total: 0 };
+
+    // Add pizza to cart
+    cart.items.push({ pizzaType, price });
+
+    // Update total price
+    cart.total += price;
+
+    // Save cart to local storage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart display
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || { items: [], total: 0 };
+    let cartDisplay = document.getElementById('cart-items');
+    let cartTotal = document.getElementById('cart-total');
+
+    if (cartDisplay && cartTotal) {
+      // Display items in the cart
+      cartDisplay.innerHTML = cart.items.map(item => `<p>${item.pizzaType}: $${item.price.toFixed(2)}</p>`).join('');
+
+      // Display total price
+      cartTotal.textContent = cart.total.toFixed(2);
+    }
+  }
+
+  function showCart() {
+    // Redirect to the cart details page
+    window.location.href = 'cart.html';
+  }
+</script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

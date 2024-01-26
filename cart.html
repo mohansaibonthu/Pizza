@@ -1,0 +1,146 @@
+<!-- cart.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Your Cart - Pizza Web Site</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+
+<body>
+  <header>
+    <h1>Your Cart</h1>
+    <nav>
+      <ul>
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <!-- Add other navigation links as needed -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="cart-details"><br><br><br><br>
+      <h2>Cart Details</h2>
+      <div id="cart-items"></div>
+      <p>Total: $<span id="cart-total">0.00</span></p>
+
+      <!-- User details form -->
+      <form id="user-details-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+
+        <button type="button" onclick="checkout()">Place Order</button>
+      </form>
+    </section>
+
+    <!-- Order confirmation section -->
+    <br><br><br><br><section id="order-confirmation" style="display: none;">
+      <h2>Order Confirmation</h2>
+      <p>Thank you, <span id="confirmation-name"></span>! Your order has been placed successfully.</p>
+      <p>Order Details:</p>
+      <div id="confirmation-items"></div>
+      <p>Total: $<span id="confirmation-total"></span></p>
+    </section>
+  </main>
+
+  <script>
+    // Retrieve cart details from local storage and display them
+    document.addEventListener('DOMContentLoaded', function () {
+      showCartDetails();
+    });
+
+    function showCartDetails() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || { items: [], total: 0 };
+      let cartDisplay = document.getElementById('cart-items');
+      let cartTotal = document.getElementById('cart-total');
+
+      if (cartDisplay && cartTotal) {
+        // Display items in the cart
+        cartDisplay.innerHTML = cart.items.map((item, index) =>
+          `<div class="cart-item">
+            <p>${item.pizzaType}: $${item.price.toFixed(2)}</p>
+            <button onclick="removeItem(${index})">Remove</button>
+          </div>`
+        ).join('');
+
+        // Display total price
+        cartTotal.textContent = cart.total.toFixed(2);
+      }
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || { items: [], total: 0 };
+
+      if (index >= 0 && index < cart.items.length) {
+        // Remove the item from the cart
+        let removedItem = cart.items.splice(index, 1)[0];
+
+        // Update total price
+        cart.total -= removedItem.price;
+
+        // Save updated cart to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Update cart display
+        showCartDetails();
+      }
+    }
+
+    function checkout() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || { items: [], total: 0 };
+
+      // Collect user details from the form
+      let userDetails = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value
+      };
+
+      // Combine user details with product details for the order
+      let orderDetails = {
+        user: userDetails,
+        cart: cart
+      };
+
+      // Display order confirmation
+      displayOrderConfirmation(orderDetails);
+
+      // Clear the cart after checkout
+      localStorage.removeItem('cart');
+    }
+
+    function displayOrderConfirmation(orderDetails) {
+      // Hide cart details section
+      document.getElementById('cart-details').style.display = 'none';
+
+      // Show order confirmation section
+      let confirmationSection = document.getElementById('order-confirmation');
+      confirmationSection.style.display = 'block';
+
+      // Display user name
+      document.getElementById('confirmation-name').textContent = orderDetails.user.name;
+
+      // Display items in the order
+      let confirmationItems = document.getElementById('confirmation-items');
+      confirmationItems.innerHTML = orderDetails.cart.items.map(item =>
+        `<p>${item.pizzaType}: $${item.price.toFixed(2)}</p>`
+      ).join('');
+
+      // Display total price
+      document.getElementById('confirmation-total').textContent = orderDetails.cart.total.toFixed(2);
+    }
+  </script>
+
+</body>
+
+</html>
